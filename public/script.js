@@ -1,4 +1,4 @@
-//@KBPsystem777 4-18-2018
+
 
 
 const allRates = document.querySelector('#getRates');
@@ -19,14 +19,9 @@ const getAllRates = () => {
             let loc = document.getElementById('output');
             let price = (Math.round(item.price_php * 100)/100);
             let newPrice = price.toLocaleString();
-
-
-
             let li = document.createElement('li');
             let span = document.createElement('span');
-    
             span.innerHTML = `${item.name}, Symbol: ${item.symbol}, PHP ${newPrice}`;
-    
             li.appendChild(span);
             loc.appendChild(li);
             console.log(item);
@@ -37,4 +32,3 @@ const getAllRates = () => {
 }
 
 window.onload = getAllRates();
-console.log('boom');

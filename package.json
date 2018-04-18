@@ -6,6 +6,7 @@
   "scripts": {
     "start": "index.js"
   },
+  "repository": "https://github.com/KBPsystem777/CoinWatch",
   "author": "Koleen BP",
   "license": "ISC",
   "dependencies": {
