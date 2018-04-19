@@ -1,11 +1,6 @@
 # CoinWatch
 
 
-### Dependencies:
-
-    "express": "^4.16.3",
-    "nodemon": "^1.17.3",
-    "request": "^2.85.0"
 
 ### Development
 
@@ -16,11 +11,8 @@ $ cd coinwatch
 
 $ npm install
 
-$ nodemon
+$ npm run start
 
-    [nodemon] 1.17.3
-    [nodemon] to restart at any time, enter `rs`
-    [nodemon] watching: *.*
-    [nodemon] starting `node index.js
+$ opening localhost:3000
 
 ```
