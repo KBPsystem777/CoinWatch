@@ -1,45 +1,40 @@
+  
+  
   import React, { Component } from 'react';
   import logo from './logo.svg';
   import './App.css';
 
 
 
+
   //API endpoint
   const endPoint = 'https://api.coinmarketcap.com/v1/ticker/?limit=20';
-
 
   class Top20Coins extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        id: "bitcoin",
-        rank: ""
-        //rank: ""
+        data: []
       }
     }
     
     componentDidMount() {
-      this.getTop20(this.state.id);
+      this.getCoins(this.state.data);
     }
 
-
-    getTop20(id) {
+    getCoins(data) {
       fetch(endPoint)
         .then(response => response.json())
         .then(json => {
-          Top20Coins.setState({
-            rank: json.id
-          })
+          //console.log(json);
+          this.setState({ json })
+          console.log(json);
         });
     }
-
-    //description: json.weather[0].description
-
-
     render() {
       return(
         <div>
-          <button onClick={this.getTop20}>Top 20 Coins</button>
+          <p></p>
         </div>
       );
     }
