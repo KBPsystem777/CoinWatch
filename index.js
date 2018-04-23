@@ -1,34 +1,23 @@
 
-import { table } from '../node_modules/table';
-   
-  // Using commonjs?
-  // const {table} = require('table');
-   
-  let data, output;
-   
-  data = [
-      ['0A', '0B', '0C'],
-      ['1A', '1B', '1C'],
-      ['2A', '2B', '2C']
-  ];
 
-output = table(data);
+const endPoint = 'https://api.coinmarketcap.com/v1/ticker/';
 
-function get() {
-    console.log(output)
-};
-
-
+function topTen() {
+    let topTenLimits = '?limit=10';
+    fetch(`${endPoint}${topTenLimits}`)
+        .then(response => response.json())
+        .then(json => {
+            JSON.stringify(json);
+            console.log(json);
+            //let displayTopTen = document.getElementById('top-ten-coins').innerHTML = json[2];
+        });
+}   
 
 /*
-const displayTable = document.querySelector('#table-output');
+const displayData = () => {
 
-const endPoint = "https://coinmarketcap.com/api/";
-
-//const searchInput = document.getElementById("search-coin");
-
-const currency = ["AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR"]
-
-console.log(endPoint);
-
+    window.onload = topTen();
+    let displayTopTen = document.getElementById('top-ten-coins').innerHTML = topTen();
+}
+displayData();
 */

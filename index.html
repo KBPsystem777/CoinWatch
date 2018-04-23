@@ -7,40 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/babel" src="index.js"></script>
-    <!--BABEL-->
-
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <script type="text/babel">
-                
-import { table } from '../node_modules/table';
-   
-   // Using commonjs?
-   // const {table} = require('table');
-    
-   let data, output;
-    
-   data = [
-       ['0A', '0B', '0C'],
-       ['1A', '1B', '1C'],
-       ['2A', '2B', '2C']
-   ];
- 
- output = table(data);
- 
- function get() {
-     console.log(output)
- };
- 
-                
-            </script>
-            <input type="search" id="search-coin"><button onclick="get()">Search</button>
-        </div>
-    </div>
-    <div id="table-output"></div>
+    <input type="search"><button>Search</button>
+    <button onclick="topTen()">Show Top10</button>
+
+    <div id="top-ten-coins"></div>
+    <script src="index.js"></script>
 </body>
 </html>
