@@ -10,10 +10,14 @@
 </head>
 <body>
 
-    <input type="search"><button>Search</button>
-    <button onclick="topTen()">Show Top10</button>
 
-    <div id="top-ten-coins"></div>
+    <div>
+        <div>
+            <input type="search"><button>Search</button>
+        </div>
+    </div>
+    <button id="topTenCoins" onclick="getTopTen()">Show Top10</button>
+    <ul id="output"></ul>
     <script src="index.js"></script>
 </body>
 </html>

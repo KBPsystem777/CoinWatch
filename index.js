@@ -2,22 +2,38 @@
 
 const endPoint = 'https://api.coinmarketcap.com/v1/ticker/';
 
-function topTen() {
+const topTenCoins = document.querySelector('#topTenCoins');
+
+//topTenCoins.addEventListener('click', getTopTen);
+
+function getTopTen() {
     let topTenLimits = '?limit=10';
     fetch(`${endPoint}${topTenLimits}`)
-        .then(response => response.json())
-        .then(json => {
-            JSON.stringify(json);
-            console.log(json);
-            //let displayTopTen = document.getElementById('top-ten-coins').innerHTML = json[2];
-        });
+        .then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data);
+            displayToPage(data);
+        }).catch(function(error){
+            console.log(JSON.stringify(error));
+        })
+        getTopTen = function(){};
 }   
 
-/*
-const displayData = () => {
-
-    window.onload = topTen();
-    let displayTopTen = document.getElementById('top-ten-coins').innerHTML = topTen();
+function displayToPage(data) {
+    //make the `data` become OBJECTS
+    data.forEach(function(item,i) {
+        let coinName = item.id;
+        let coinPrice = item.price_usd;
+        //console.log(item);
+        let li = document.createElement('li');
+        let span = document.createElement('span');
+        span.innerHTML = `${item.symbol}, ${item.id}, ${coinPrice}`;
+        li.appendChild(span);
+        output.appendChild(li);
+        console.log(item);
+    });
 }
-displayData();
-*/
+
+//window.onload = getTopTen;
+    
