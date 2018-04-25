@@ -1,10 +1,10 @@
 
-
 const endPoint = 'https://api.coinmarketcap.com/v1/ticker/';
 
-const topTenCoins = document.querySelector('#topTenCoins');
-
 //topTenCoins.addEventListener('click', getTopTen);
+
+
+    let topTenCoins = document.querySelector('#topTenCoins');
 
 function getTopTen() {
     let topTenLimits = '?limit=10';
@@ -17,6 +17,7 @@ function getTopTen() {
         }).catch(function(error){
             console.log(JSON.stringify(error));
         })
+        //make this function run only once so that there's no data flood on the <li>
         getTopTen = function(){};
 }   
 
@@ -30,10 +31,29 @@ function displayToPage(data) {
         let span = document.createElement('span');
         span.innerHTML = `${item.symbol}, ${item.id}, ${coinPrice}`;
         li.appendChild(span);
-        output.appendChild(li);
+        output.appendChild(li); 
         console.log(item);
     });
 }
 
-//window.onload = getTopTen;
-    
+
+
+//eventListener for Search button
+
+//addEventListener('click', requestRate);
+    let requestRate = document.getElementById('requestRate');
+    let searchInput = document.getElementById('searchCoin');
+const searchRate = () => {
+    let typed = searchInput.value;
+    let searchURL = endPoint + typed;
+    console.log(searchURL);
+    fetch(searchURL)
+        .then(function(response){
+            return response.json()
+        }).then(function(data){
+            console.log(data);
+            displayToPage(data);
+        }).catch(function(error){
+            console.log(JSON.stringify(error));
+        })
+}
