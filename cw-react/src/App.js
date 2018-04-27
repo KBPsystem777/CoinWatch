@@ -1,10 +1,8 @@
-  
-  
-  import React, { Component } from 'react';
-  import logo from './logo.svg';
-  import './App.css';
 
-
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import ParticleBG from './Particles';
 
 
   //API endpoint
@@ -50,7 +48,6 @@
     return <button>Search</button>
   }
 
-
   class SearchNav extends React.Component {
     render() {
       return(
@@ -62,15 +59,14 @@
     }
   }
 
-
   class App extends Component {
     render() {
       return (
         <div className="App">
-          <header className="App-header">
+          <ParticleBG id="particles">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">CoinWatch App</h1>
-          </header>
+              <h1 className="App-title">CoinWatch App</h1>
+          </ParticleBG>
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
