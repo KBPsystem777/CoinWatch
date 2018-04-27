@@ -9,14 +9,14 @@ const ParticleBG = () => {
             params={{
             particles: {
                 number: {
-                value: 137,
+                value: 77,
                 density: {
                     enable: true,
                     value_area: 946.9771699587272,
                 },
                 },
                 color: {
-                value: '#4717e3',
+                value: '#00FF00',
                 },
                 shape: {
                 type: 'circle',
@@ -51,13 +51,13 @@ const ParticleBG = () => {
                 line_linked: {
                 enable: true,
                 distance: 160,
-                color: '#bc8f8f',
+                color: '#FFFFFF',
                 opacity: 0.5,
                 width: 1.5,
                 },
                 move: {
                 enable: true,
-                speed: 1,
+                speed: 3,
                 direction: 'top',
                 random: false,
                 straight: false,
@@ -98,7 +98,7 @@ const ParticleBG = () => {
                     speed: 3,
                 },
                 repulse: {
-                    distance: 30,
+                    distance: 37,
                     duration: 0.4,
                 },
                 push: {
@@ -114,7 +114,7 @@ const ParticleBG = () => {
             style={{
             position: 'sticky'
             }}
-        />
+         />
         
         </div>
     )
