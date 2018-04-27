@@ -1,6 +1,5 @@
-body {
-  background-color: #000;
-}
+
+
 
 .App {
   text-align: center;
@@ -9,6 +8,7 @@ body {
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  z-index: 0;
 }
 
 .App-header {
@@ -24,6 +24,7 @@ body {
 
 .App-intro {
   font-size: large;
+  height: 50%;
 }
 
 @keyframes App-logo-spin {
@@ -32,8 +33,9 @@ body {
 }
 
 
-#particles {
-  background-color: #000;
+canvas {
+  background-color: #000 !important;
   position: sticky;
-  z-index: 900;
+  z-index: 900 !important;
+  height: 200px !important;
 }
